@@ -4,6 +4,6 @@ export default {
   "{src,tests}/**/*.{ts,tsx,vue}": [
     "prettier --write",
     "eslint --fix",
-    () => `vue-tsc --build --force`,
+    () => `vue-tsc -b`,
   ],
 };
