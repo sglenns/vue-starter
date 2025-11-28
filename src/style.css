@@ -41,7 +41,6 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -75,5 +74,41 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* invalid - accent-color is not widely available */
+a {
+  accent-color: red;
+}
+
+/* invalid - abs is not widely available */
+.box {
+  width: abs(20% - 100px);
+}
+
+/* invalid - :has() is not widely available */
+h1:has(+ h2) {
+  margin: 0 0 0.25rem 0;
+}
+
+/* invalid - device-posture is not widely available */
+@media (device-posture: folded) {
+  a {
+    color: red;
+  }
+}
+
+/* invalid - property value doesn't match @supports indicator */
+@supports (accent-color: auto) {
+  a {
+    accent-color: abs(20% - 10px);
+  }
+}
+
+/* invalid - @supports says that this property isn't available */
+@supports not (accent-color: auto) {
+  a {
+    accent-color: auto;
   }
 }
